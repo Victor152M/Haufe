@@ -1,0 +1,7 @@
+postgresql_database: "postgres"
+postgresql_user: "postgres"
+postgresql_password: "CanYouGue55ss!."
+postgresql_host: ""
+postgresql_port: "5432"
+
+flask_secret_key: r"l\xd3\xdd\x88\xea%0\xa0\x06\xe7\xa0\xf61\xaa4\xf6D\x98\xf3\xd0\x05\x18\xb1u\x84W\xe9\x9d\xc1\xba\xaf\x8f\xf0\x86\xaa6"

@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'GlacialIndifference_Bold';
+    src: url('../fonts/GlacialIndifference/GlacialIndifference-Bold.otf'); 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #141414;
+    color: #ababab;
+    /* line-height: 1.6; */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 200vh;
+    max-width: 100vw;
+}
+
+header{
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    background-color: #141414;
+    color: #ababab;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+
+.main_content {
+    display: block;
+    margin-left: 65px;
+    padding: 0 100px;
+}
+
+/* Irelevant momentan
+
+.preview_of_event {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 10rem;
+    background-color: #463443;
+    border-radius: 10px;
+    padding: 10px;
+    border: solid 1px palevioletred;
+}
+
+.preview_of_event img { 
+    max-width: 250px;
+    min-width: 50px;
+}
+
+.preview_of_event .texts {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview_of_event .texts .ip_text {
+    display: flex;
+}
+
+.preview_of_event .texts .bottom_text {
+    display: flex;
+}
+*/
+
+.all_event {
+    display: flex;
+    flex-direction: column;
+}
+
+.cover_image {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.event-image {
+    max-width: 80%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.tile_and_link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+.event_title {
+    font-family: GlacialIndifference;
+    margin: 0;
+    color: white;
+}
+
+.event-details {
+    background-color: #141414;
+    color: rgba(255, 255, 255, 0.779);
+    padding: 20px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.date-location {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.date, .location {
+    background-color: #e8dc36;
+    color: #141414;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* Mobile Version of the website */
+@media (max-width: 1000px) {
+    .main_content {
+        margin-left: 20px;
+        padding: 0;
+    }
+
+    .all_event {
+        /* display: flex;
+        flex-direction: column; */
+        width: 90vw;
+    }
+
+    .cover_image {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .event-image {
+        max-width: 80%;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    
+    .date-location {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .date, .location {
+        background-color: #e8dc36;
+        color: #141414;
+        padding: 5px 10px;
+        border-radius: 3px;
+        margin-top: 10px;   
+    }
+
+    .tile_and_link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.task-card {
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.claim-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #4CAF50;  /* Nice green color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hover effect for active button */
+.claim-button:hover {
+    background-color: #45a049;  /* Darker green on hover */
+    transform: scale(1.05);     /* Slight grow effect */
+}
+
+/* Claimed button style */
+.claim-button.claimed {
+    background-color: #b0b0b0;  /* Light grey for disabled state */
+    color: #666666;
+    cursor: not-allowed;        /* Show the not-allowed cursor */
+    text-decoration: line-through; /* Strikes out the text */
+}
+
+/* Additional styling for claimed button */
+.claim-button.claimed:hover {
+    background-color: #b0b0b0;  /* Keeps same color on hover */
+    transform: none;            /* Disable hover grow effect */
+}
+
+.budget-section {
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.budget {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #2c3e50;
+}

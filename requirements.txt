@@ -1,0 +1,4 @@
+flask
+passlib
+psycopg2-binary
+pyyaml

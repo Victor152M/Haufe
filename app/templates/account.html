@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page - Events Website</title>
+    <link rel="icon" href="../static/images/logo.png"/>
+    <link rel="stylesheet" href="../static/css/account.css">
+    <link rel="stylesheet" href="../static/css/navigation.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+</head>
+<body>
+    <main>
+        <div id="content" class="main_content">
+            <div class="card">
+                <div class="profile-header">
+                    <!--
+                    <img src="" alt="Profile Avatar" class="profile-avatar">
+                    -->
+                    <div class="profile-info">
+                        <h1>{{ username }}</h1>
+                        <p>{{ email }}</p>
+                    </div>
+                </div>
+                <!-- TODO in the future <button class="btn" onclick="editProfile()">Edit Profile</button> -->
+                <button class="btn" onclick="showLogoutConfirmation()">Log Out</button>
+            </div>
+        
+            <div id="logoutModal" class="modal">
+                <div class="modal-content">
+                    <h2>Confirm Logout</h2>
+                    <p>Are you sure you want to log out?</p>
+                    <div class="modal-buttons">
+                        <button class="modal-button cancel-button" onclick="closeLogoutModal()">Cancel</button>
+                        <button class="modal-button confirm-button" onclick="logout()">Logout</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="removeEventModal" class="modal">
+                <div class="modal-content">
+                    <h2>Confirm Event Removal</h2>
+                    <p>Are you sure you want to remove the event?</p>
+                    <div class="modal-buttons">
+                        <button class="modal-button cancel-button" onclick="cancelRemoval()">Cancel</button>
+                        <button class="modal-button confirm-button" onclick="confirmRemoval()">Remove</button>
+                    </div>
+                </div>
+            </div>
+        
+        
+            <section id="events">
+                {% for event in events %}
+                    <article class="event-card" data-article="{{ links[loop.index0] }}">
+                        <img src="{{ url_for('static', 
+                        filename=event[3].replace('app/static/', '').replace('static/', '')) }}"
+                        alt="{{ event[1] }}">
+                        <h3>{{ event[1] }}</h3>
+                        <p clasx`s="event-date">Date: {{ event[4] }} </p>
+                        <p class="event-location">{{ event[5] }}</p>
+                        <div class="event-actions">
+                            <!--<button class="edit-event" data-id="{{ event[0] }}">Edit</button>-->
+                            <button class="remove-event" data-id="{{ event[0] }}">Remove</button>
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        </div> 
+    </main>
+    <footer>
+        <nav>
+        <p>&copy; 2024 Eventer. <!--All rights reserved.--></p>
+        <!--<a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Service</a> | 
+        <a href="#">Contact Us</a>
+        </nav>-->
+    </footer>
+
+    <script src="../static/js/account.js"></script>
+    <script src="../static/js/navbar.js"></script>
+</body>
+</html>
