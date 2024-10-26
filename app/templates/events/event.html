@@ -59,7 +59,7 @@
                             <h4>{{ resp[1] }}</h4>
                             <p>Detalii: {{ resp[2] }}</p>
                             <div class="budget-section">
-                                <span class="budget">Buget: {{ resp[4] }} Lei</span>
+                                <span class="budget">Buget: {{ resp[4] | round(2) }} Lei</span>
                             </div>
                             <div class="task-status">
                                 {% if resp[3] is not none %}
